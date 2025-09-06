@@ -13,6 +13,21 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "contact": {
+      "type": "component",
+      "component": "legal.contact",
+      "repeatable": false
+    },
+    "webdesign": {
+      "type": "component",
+      "component": "legal.webdesign",
+      "repeatable": false
+    },
+    "photos": {
+      "type": "component",
+      "component": "legal.photos",
+      "repeatable": false
     }
   }
 }
