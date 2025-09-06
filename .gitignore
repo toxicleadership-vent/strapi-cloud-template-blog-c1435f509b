@@ -125,7 +125,14 @@ coverage
 license.txt
 exports
 .strapi
-dist
-build
 .strapi-updater.json
 .strapi-cloud.json
+
+# Strapi build artefacts
+.cache/
+build/
+dist/
+.tmp/
+
+# Strapi generated types
+contentTypes.d.ts
