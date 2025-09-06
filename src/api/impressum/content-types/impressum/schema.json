@@ -4,14 +4,14 @@
   "info": {
     "singularName": "impressum",
     "pluralName": "impressums",
-    "displayName": "Impressum"
+    "displayName": "Imprint"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "test": {
+    "title": {
       "type": "string"
     }
   }

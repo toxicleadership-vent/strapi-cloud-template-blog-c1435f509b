@@ -541,7 +541,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiImpressumImpressum extends Struct.SingleTypeSchema {
   collectionName: 'impressums';
   info: {
-    displayName: 'Impressum';
+    displayName: 'Imprint';
     pluralName: 'impressums';
     singularName: 'impressum';
   };
@@ -559,7 +559,35 @@ export interface ApiImpressumImpressum extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    test: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLegalLegal extends Struct.SingleTypeSchema {
+  collectionName: 'legals';
+  info: {
+    displayName: 'Legal';
+    pluralName: 'legals';
+    singularName: 'legal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::legal.legal'>;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1081,6 +1109,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::impressum.impressum': ApiImpressumImpressum;
+      'api::legal.legal': ApiLegalLegal;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

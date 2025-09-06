@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_legal_photos",
+  "info": {
+    "displayName": "Photos"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
