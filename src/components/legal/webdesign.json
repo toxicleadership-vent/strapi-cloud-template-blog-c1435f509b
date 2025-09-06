@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_legal_webdesigns",
+  "info": {
+    "displayName": "Webdesign"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

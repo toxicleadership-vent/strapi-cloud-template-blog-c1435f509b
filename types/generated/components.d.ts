@@ -1,5 +1,41 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface LegalContact extends Struct.ComponentSchema {
+  collectionName: 'components_legal_contacts';
+  info: {
+    displayName: 'Contact';
+    icon: 'envelop';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface LegalPhotos extends Struct.ComponentSchema {
+  collectionName: 'components_legal_photos';
+  info: {
+    displayName: 'Photos';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface LegalWebdesign extends Struct.ComponentSchema {
+  collectionName: 'components_legal_webdesigns';
+  info: {
+    displayName: 'Webdesign';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    link: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -65,6 +101,9 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'legal.contact': LegalContact;
+      'legal.photos': LegalPhotos;
+      'legal.webdesign': LegalWebdesign;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

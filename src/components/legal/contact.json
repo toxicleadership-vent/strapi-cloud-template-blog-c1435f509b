@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_legal_contacts",
+  "info": {
+    "displayName": "Contact",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
