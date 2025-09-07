@@ -65,7 +65,7 @@
         }
       },
       "component": "seo.metadata",
-      "repeatable": true
+      "repeatable": false
     }
   }
 }

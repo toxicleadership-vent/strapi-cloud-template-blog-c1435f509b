@@ -548,7 +548,7 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::contact.contact'
     >;
-    metadata: Schema.Attribute.Component<'seo.metadata', true> &
+    metadata: Schema.Attribute.Component<'seo.metadata', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
