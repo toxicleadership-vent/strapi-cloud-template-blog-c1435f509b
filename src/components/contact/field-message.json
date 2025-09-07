@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_contact_field_messages",
+  "info": {
+    "displayName": "Field Message"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "component",
+      "component": "contact.rules",
+      "repeatable": false
+    },
+    "collaborate": {
+      "type": "component",
+      "component": "contact.text-block",
+      "repeatable": false
+    },
+    "interview": {
+      "type": "component",
+      "component": "contact.text-block",
+      "repeatable": false
+    },
+    "workshop": {
+      "type": "component",
+      "component": "contact.text-block",
+      "repeatable": false
+    },
+    "feedback": {
+      "type": "component",
+      "component": "contact.text-block",
+      "repeatable": false
+    },
+    "other": {
+      "type": "component",
+      "component": "contact.text-block",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,5 +1,91 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContactFieldEmail extends Struct.ComponentSchema {
+  collectionName: 'components_contact_field_emails';
+  info: {
+    displayName: 'Field Email';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    rules: Schema.Attribute.Component<'contact.rules', false>;
+  };
+}
+
+export interface ContactFieldMessage extends Struct.ComponentSchema {
+  collectionName: 'components_contact_field_messages';
+  info: {
+    displayName: 'Field Message';
+  };
+  attributes: {
+    collaborate: Schema.Attribute.Component<'contact.text-block', false>;
+    feedback: Schema.Attribute.Component<'contact.text-block', false>;
+    interview: Schema.Attribute.Component<'contact.text-block', false>;
+    name: Schema.Attribute.String;
+    other: Schema.Attribute.Component<'contact.text-block', false>;
+    rules: Schema.Attribute.Component<'contact.rules', false>;
+    workshop: Schema.Attribute.Component<'contact.text-block', false>;
+  };
+}
+
+export interface ContactFieldSubject extends Struct.ComponentSchema {
+  collectionName: 'components_contact_field_subjects';
+  info: {
+    displayName: 'Field Subject';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    options: Schema.Attribute.Enumeration<['workshop ', 'feedback', 'other']>;
+  };
+}
+
+export interface ContactFieldText extends Struct.ComponentSchema {
+  collectionName: 'components_contact_field_texts';
+  info: {
+    displayName: 'Field Text';
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    rules: Schema.Attribute.Component<'contact.rules', false>;
+  };
+}
+
+export interface ContactForm extends Struct.ComponentSchema {
+  collectionName: 'components_contact_forms';
+  info: {
+    displayName: 'Form';
+  };
+  attributes: {
+    email: Schema.Attribute.Component<'contact.field-email', false>;
+    first_name: Schema.Attribute.Component<'contact.field-text', false>;
+    last_name: Schema.Attribute.Component<'contact.field-text', false>;
+    message: Schema.Attribute.Component<'contact.field-message', false>;
+    subject: Schema.Attribute.Component<'contact.field-subject', false>;
+  };
+}
+
+export interface ContactRules extends Struct.ComponentSchema {
+  collectionName: 'components_contact_rules';
+  info: {
+    displayName: 'Rules';
+  };
+  attributes: {
+    message: Schema.Attribute.String;
+    minLength: Schema.Attribute.String;
+    required: Schema.Attribute.String;
+  };
+}
+
+export interface ContactTextBlock extends Struct.ComponentSchema {
+  collectionName: 'components_contact_text_blocks';
+  info: {
+    displayName: 'Text Block';
+  };
+  attributes: {
+    subtitle: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+  };
+}
+
 export interface LegalContact extends Struct.ComponentSchema {
   collectionName: 'components_legal_contacts';
   info: {
@@ -32,6 +118,19 @@ export interface LegalWebdesign extends Struct.ComponentSchema {
     href: Schema.Attribute.String;
     link: Schema.Attribute.String;
     text: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SeoMetadata extends Struct.ComponentSchema {
+  collectionName: 'components_seo_metadata';
+  info: {
+    displayName: 'Metadata';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.String;
+    siteName: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -101,9 +200,17 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'contact.field-email': ContactFieldEmail;
+      'contact.field-message': ContactFieldMessage;
+      'contact.field-subject': ContactFieldSubject;
+      'contact.field-text': ContactFieldText;
+      'contact.form': ContactForm;
+      'contact.rules': ContactRules;
+      'contact.text-block': ContactTextBlock;
       'legal.contact': LegalContact;
       'legal.photos': LegalPhotos;
       'legal.webdesign': LegalWebdesign;
+      'seo.metadata': SeoMetadata;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

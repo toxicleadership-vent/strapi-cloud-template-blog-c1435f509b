@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_contact_rules",
+  "info": {
+    "displayName": "Rules"
+  },
+  "options": {},
+  "attributes": {
+    "required": {
+      "type": "string"
+    },
+    "minLength": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

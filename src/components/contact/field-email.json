@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_contact_field_emails",
+  "info": {
+    "displayName": "Field Email"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "component",
+      "component": "contact.rules",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

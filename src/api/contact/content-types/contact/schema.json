@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "form": {
+      "type": "component",
+      "component": "contact.form",
+      "repeatable": false
+    },
+    "success": {
+      "type": "string"
+    },
+    "error": {
+      "type": "text"
+    },
+    "metadata": {
+      "type": "component",
+      "component": "seo.metadata",
+      "repeatable": true
+    }
+  }
+}

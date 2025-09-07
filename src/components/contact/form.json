@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_contact_forms",
+  "info": {
+    "displayName": "Form"
+  },
+  "options": {},
+  "attributes": {
+    "first_name": {
+      "type": "component",
+      "component": "contact.field-text",
+      "repeatable": false
+    },
+    "last_name": {
+      "type": "component",
+      "component": "contact.field-text",
+      "repeatable": false
+    },
+    "email": {
+      "type": "component",
+      "component": "contact.field-email",
+      "repeatable": false
+    },
+    "subject": {
+      "type": "component",
+      "component": "contact.field-subject",
+      "repeatable": false
+    },
+    "message": {
+      "type": "component",
+      "component": "contact.field-message",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_contact_field_subjects",
+  "info": {
+    "displayName": "Field Subject"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "options": {
+      "type": "enumeration",
+      "enum": [
+        "workshop ",
+        "feedback",
+        "other"
+      ]
+    }
+  },
+  "config": {}
+}
