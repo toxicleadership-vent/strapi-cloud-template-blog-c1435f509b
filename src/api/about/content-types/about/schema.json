@@ -1,0 +1,14 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": { "singularName": "about", "pluralName": "abouts", "displayName": "About" },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "team": { "type": "component", "repeatable": false, "component": "about.team" },
+    "media": { "type": "component", "repeatable": false, "component": "about.media" },
+    "contact": { "type": "text" },
+    "contactButton": { "type": "component", "repeatable": false, "component": "shared.button" },
+    "metadata": { "type": "component", "repeatable": false, "component": "seo.metadata" }
+  }
+}

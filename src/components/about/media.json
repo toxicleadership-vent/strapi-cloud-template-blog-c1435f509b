@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_about_media",
+  "info": { "displayName": "Media Block" },
+  "attributes": {
+    "title": { "type": "string" },
+    "video": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.video"
+    }
+  }
+}

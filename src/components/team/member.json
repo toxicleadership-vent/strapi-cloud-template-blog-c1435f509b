@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_team_member",
+  "info": { "displayName": "Team Member" },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "position": { "type": "string" },
+    "image": { "type": "media", "allowedTypes": ["images"], "multiple": false, "required": false },
+    "cv": { "type": "richtext" },
+    "linkedin": { "type": "component", "repeatable": false, "component": "shared.link" }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "collectionName": "components_media_video",
+  "info": { "displayName": "Video" },
+  "attributes": {
+    "src": { "type": "string", "required": true },
+    "title": { "type": "string" },
+    "show": { "type": "string" },
+    "episode": { "type": "string" },
+    "bottom": { "type": "string" }
+  }
+}

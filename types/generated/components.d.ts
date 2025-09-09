@@ -1,5 +1,28 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AboutMedia extends Struct.ComponentSchema {
+  collectionName: 'components_about_media';
+  info: {
+    displayName: 'Media Block';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    video: Schema.Attribute.Component<'media.video', true>;
+  };
+}
+
+export interface AboutTeam extends Struct.ComponentSchema {
+  collectionName: 'components_about_team';
+  info: {
+    displayName: 'Team Block';
+  };
+  attributes: {
+    members: Schema.Attribute.Component<'team.member', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface ContactFieldEmail extends Struct.ComponentSchema {
   collectionName: 'components_contact_field_emails';
   info: {
@@ -122,6 +145,20 @@ export interface LegalWebdesign extends Struct.ComponentSchema {
   };
 }
 
+export interface MediaVideo extends Struct.ComponentSchema {
+  collectionName: 'components_media_video';
+  info: {
+    displayName: 'Video';
+  };
+  attributes: {
+    bottom: Schema.Attribute.String;
+    episode: Schema.Attribute.String;
+    show: Schema.Attribute.String;
+    src: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SeoMetadata extends Struct.ComponentSchema {
   collectionName: 'components_seo_metadata';
   info: {
@@ -131,6 +168,28 @@ export interface SeoMetadata extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     image: Schema.Attribute.String;
     siteName: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_button';
+  info: {
+    displayName: 'Button';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_link';
+  info: {
+    displayName: 'Link';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -197,9 +256,25 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface TeamMember extends Struct.ComponentSchema {
+  collectionName: 'components_team_member';
+  info: {
+    displayName: 'Team Member';
+  };
+  attributes: {
+    cv: Schema.Attribute.RichText;
+    image: Schema.Attribute.Media<'images'>;
+    linkedin: Schema.Attribute.Component<'shared.link', false>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    position: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'about.media': AboutMedia;
+      'about.team': AboutTeam;
       'contact.field-email': ContactFieldEmail;
       'contact.field-message': ContactFieldMessage;
       'contact.field-subject': ContactFieldSubject;
@@ -210,12 +285,16 @@ declare module '@strapi/strapi' {
       'legal.contact': LegalContact;
       'legal.photos': LegalPhotos;
       'legal.webdesign': LegalWebdesign;
+      'media.video': MediaVideo;
       'seo.metadata': SeoMetadata;
+      'shared.button': SharedButton;
+      'shared.link': SharedLink;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'team.member': TeamMember;
     }
   }
 }
