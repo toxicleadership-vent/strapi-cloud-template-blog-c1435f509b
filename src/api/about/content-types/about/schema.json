@@ -1,14 +1,76 @@
 {
   "kind": "singleType",
   "collectionName": "abouts",
-  "info": { "singularName": "about", "pluralName": "abouts", "displayName": "About" },
-  "options": { "draftAndPublish": true },
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
-    "title": { "type": "string", "required": true },
-    "team": { "type": "component", "repeatable": false, "component": "about.team" },
-    "media": { "type": "component", "repeatable": false, "component": "about.media" },
-    "contact": { "type": "text" },
-    "contactButton": { "type": "component", "repeatable": false, "component": "shared.button" },
-    "metadata": { "type": "component", "repeatable": false, "component": "seo.metadata" }
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "team": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "about.team",
+      "repeatable": false
+    },
+    "media": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "about.media",
+      "repeatable": false
+    },
+    "contact": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "contactButton": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.button",
+      "repeatable": false
+    },
+    "metadata": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "seo.metadata",
+      "repeatable": false
+    }
   }
 }
