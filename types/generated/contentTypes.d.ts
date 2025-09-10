@@ -412,7 +412,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    metadata: Schema.Attribute.Component<'seo.metadata', false> &
+    metadata: Schema.Attribute.Component<'seo.metadata', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

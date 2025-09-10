@@ -70,7 +70,7 @@
         }
       },
       "component": "seo.metadata",
-      "repeatable": false
+      "repeatable": true
     }
   }
 }
