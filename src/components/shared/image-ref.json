@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_image_refs",
+  "info": {
+    "displayName": "Image-ref"
+  },
+  "options": {},
+  "attributes": {
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "alt": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

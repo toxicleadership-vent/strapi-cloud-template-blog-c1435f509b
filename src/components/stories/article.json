@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_stories_articles",
+  "info": {
+    "displayName": "Article"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "length": {
+      "type": "string"
+    },
+    "tag_title": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "component",
+      "component": "shared.tag",
+      "repeatable": true
+    },
+    "abstract": {
+      "type": "text"
+    },
+    "link": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "image": {
+      "type": "component",
+      "component": "shared.image-ref",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

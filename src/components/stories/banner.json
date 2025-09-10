@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_stories_banners",
+  "info": {
+    "displayName": "Banner"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    },
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

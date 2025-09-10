@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_stories_categories",
+  "info": {
+    "displayName": "Category"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "articles": {
+      "type": "component",
+      "component": "stories.article",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

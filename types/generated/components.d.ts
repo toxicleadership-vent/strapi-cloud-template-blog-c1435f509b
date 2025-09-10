@@ -183,6 +183,17 @@ export interface SharedButton extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedImageRef extends Struct.ComponentSchema {
+  collectionName: 'components_shared_image_refs';
+  info: {
+    displayName: 'Image-ref';
+  };
+  attributes: {
+    alt: Schema.Attribute.String;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_link';
   info: {
@@ -190,6 +201,7 @@ export interface SharedLink extends Struct.ComponentSchema {
   };
   attributes: {
     href: Schema.Attribute.String;
+    state: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -256,6 +268,57 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTag extends Struct.ComponentSchema {
+  collectionName: 'components_shared_tags';
+  info: {
+    displayName: 'Tag';
+  };
+  attributes: {
+    value: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface StoriesArticle extends Struct.ComponentSchema {
+  collectionName: 'components_stories_articles';
+  info: {
+    displayName: 'Article';
+  };
+  attributes: {
+    abstract: Schema.Attribute.Text;
+    image: Schema.Attribute.Component<'shared.image-ref', false>;
+    length: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'shared.link', false>;
+    tag_title: Schema.Attribute.String;
+    tags: Schema.Attribute.Component<'shared.tag', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface StoriesBanner extends Struct.ComponentSchema {
+  collectionName: 'components_stories_banners';
+  info: {
+    displayName: 'Banner';
+  };
+  attributes: {
+    link: Schema.Attribute.Component<'shared.link', false>;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface StoriesCategory extends Struct.ComponentSchema {
+  collectionName: 'components_stories_categories';
+  info: {
+    displayName: 'Category';
+  };
+  attributes: {
+    articles: Schema.Attribute.Component<'stories.article', true> &
+      Schema.Attribute.Required;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface TeamMember extends Struct.ComponentSchema {
   collectionName: 'components_team_member';
   info: {
@@ -288,12 +351,17 @@ declare module '@strapi/strapi' {
       'media.video': MediaVideo;
       'seo.metadata': SeoMetadata;
       'shared.button': SharedButton;
+      'shared.image-ref': SharedImageRef;
       'shared.link': SharedLink;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.tag': SharedTag;
+      'stories.article': StoriesArticle;
+      'stories.banner': StoriesBanner;
+      'stories.category': StoriesCategory;
       'team.member': TeamMember;
     }
   }
