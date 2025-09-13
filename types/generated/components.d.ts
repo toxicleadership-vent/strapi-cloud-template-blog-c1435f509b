@@ -109,6 +109,16 @@ export interface ContactTextBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface DonationDonationListItem extends Struct.ComponentSchema {
+  collectionName: 'components_donation_donation_list_items';
+  info: {
+    displayName: 'Donation list item';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+  };
+}
+
 export interface GettingInformedSection extends Struct.ComponentSchema {
   collectionName: 'components_getting_informed_section';
   info: {
@@ -430,6 +440,7 @@ declare module '@strapi/strapi' {
       'contact.form': ContactForm;
       'contact.rules': ContactRules;
       'contact.text-block': ContactTextBlock;
+      'donation.donation-list-item': DonationDonationListItem;
       'getting-informed.section': GettingInformedSection;
       'legal.contact': LegalContact;
       'legal.photos': LegalPhotos;
