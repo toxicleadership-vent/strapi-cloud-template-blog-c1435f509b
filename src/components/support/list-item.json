@@ -1,0 +1,7 @@
+{
+  "collectionName": "components_support_list_item",
+  "info": { "displayName": "List Item" },
+  "attributes": {
+    "text": { "type": "text", "required": true }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "collectionName": "components_support_links_group",
+  "info": { "displayName": "Links Group" },
+  "attributes": {
+    "header": { "type": "string", "required": true },
+    "links": { "type": "component", "repeatable": true, "component": "shared.link", "required": true }
+  }
+}

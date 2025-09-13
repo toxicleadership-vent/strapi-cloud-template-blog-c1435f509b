@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_support_banner",
+  "info": { "displayName": "Banner" },
+  "attributes": {
+    "title": { "type": "string" },
+    "link": { "type": "component", "repeatable": false, "component": "shared.link" },
+    "text": { "type": "text" }
+  }
+}

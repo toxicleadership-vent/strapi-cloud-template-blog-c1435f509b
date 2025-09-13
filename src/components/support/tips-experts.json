@@ -1,0 +1,8 @@
+{
+  "collectionName": "components_support_tips_experts",
+  "info": { "displayName": "Tips Experts" },
+  "attributes": {
+    "title": { "type": "string" },
+    "tips": { "type": "component", "repeatable": true, "component": "support.tips-item" }
+  }
+}

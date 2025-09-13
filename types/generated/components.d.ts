@@ -319,6 +319,78 @@ export interface StoriesCategory extends Struct.ComponentSchema {
   };
 }
 
+export interface SupportAccordionItem extends Struct.ComponentSchema {
+  collectionName: 'components_support_accordion_item';
+  info: {
+    displayName: 'Accordion Item';
+  };
+  attributes: {
+    first_text: Schema.Attribute.RichText;
+    list: Schema.Attribute.Component<'support.list-item', true>;
+    second_text: Schema.Attribute.RichText;
+    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SupportBanner extends Struct.ComponentSchema {
+  collectionName: 'components_support_banner';
+  info: {
+    displayName: 'Banner';
+  };
+  attributes: {
+    link: Schema.Attribute.Component<'shared.link', false>;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SupportLinksGroup extends Struct.ComponentSchema {
+  collectionName: 'components_support_links_group';
+  info: {
+    displayName: 'Links Group';
+  };
+  attributes: {
+    header: Schema.Attribute.String & Schema.Attribute.Required;
+    links: Schema.Attribute.Component<'shared.link', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface SupportListItem extends Struct.ComponentSchema {
+  collectionName: 'components_support_list_item';
+  info: {
+    displayName: 'List Item';
+  };
+  attributes: {
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface SupportTipsExperts extends Struct.ComponentSchema {
+  collectionName: 'components_support_tips_experts';
+  info: {
+    displayName: 'Tips Experts';
+  };
+  attributes: {
+    tips: Schema.Attribute.Component<'support.tips-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SupportTipsItem extends Struct.ComponentSchema {
+  collectionName: 'components_support_tips_item';
+  info: {
+    displayName: 'Tips Item';
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    image: Schema.Attribute.String;
+    link: Schema.Attribute.Component<'shared.button', false>;
+    summary: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface TeamMember extends Struct.ComponentSchema {
   collectionName: 'components_team_member';
   info: {
@@ -362,6 +434,12 @@ declare module '@strapi/strapi' {
       'stories.article': StoriesArticle;
       'stories.banner': StoriesBanner;
       'stories.category': StoriesCategory;
+      'support.accordion-item': SupportAccordionItem;
+      'support.banner': SupportBanner;
+      'support.links-group': SupportLinksGroup;
+      'support.list-item': SupportListItem;
+      'support.tips-experts': SupportTipsExperts;
+      'support.tips-item': SupportTipsItem;
       'team.member': TeamMember;
     }
   }

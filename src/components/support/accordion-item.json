@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_support_accordion_item",
+  "info": {
+    "displayName": "Accordion Item"
+  },
+  "attributes": {
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "first_text": {
+      "type": "richtext"
+    },
+    "list": {
+      "type": "component",
+      "component": "support.list-item",
+      "repeatable": true
+    },
+    "second_text": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}
