@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "impressums",
+  "collectionName": "generals",
   "info": {
-    "singularName": "impressum",
-    "pluralName": "impressums",
-    "displayName": "Imprint"
+    "singularName": "general",
+    "pluralName": "generals",
+    "displayName": "General"
   },
   "options": {
     "draftAndPublish": true
@@ -23,44 +23,32 @@
         }
       }
     },
-    "contact": {
-      "type": "component",
+    "subtitle": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "component": "legal.contact",
-      "repeatable": false
+      }
     },
-    "webdesign": {
+    "navbar": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "legal.webdesign",
-      "repeatable": false
+      "component": "shared.link",
+      "repeatable": true
     },
-    "photos": {
+    "metadata": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "legal.photos",
-      "repeatable": false
-    },
-    "dataPrivacy": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "legal.data-privacy",
+      "component": "seo.metadata",
       "repeatable": false
     }
   }

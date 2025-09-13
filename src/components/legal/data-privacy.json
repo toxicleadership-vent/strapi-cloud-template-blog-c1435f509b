@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_legal_data_privacies",
+  "info": {
+    "displayName": "data-privacy"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

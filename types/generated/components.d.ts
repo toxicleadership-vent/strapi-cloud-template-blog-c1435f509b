@@ -144,6 +144,16 @@ export interface LegalContact extends Struct.ComponentSchema {
   };
 }
 
+export interface LegalDataPrivacy extends Struct.ComponentSchema {
+  collectionName: 'components_legal_data_privacies';
+  info: {
+    displayName: 'data-privacy';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LegalPhotos extends Struct.ComponentSchema {
   collectionName: 'components_legal_photos';
   info: {
@@ -443,6 +453,7 @@ declare module '@strapi/strapi' {
       'donation.donation-list-item': DonationDonationListItem;
       'getting-informed.section': GettingInformedSection;
       'legal.contact': LegalContact;
+      'legal.data-privacy': LegalDataPrivacy;
       'legal.photos': LegalPhotos;
       'legal.webdesign': LegalWebdesign;
       'media.video': MediaVideo;
