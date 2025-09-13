@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_donation_donation_list_items",
+  "info": {
+    "displayName": "Donation list item"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
