@@ -644,6 +644,40 @@ export interface ApiExperienceExperience extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiGettingInformedGettingInformed
+  extends Struct.SingleTypeSchema {
+  collectionName: 'getting_informeds';
+  info: {
+    displayName: 'Getting Informed';
+    pluralName: 'getting-informeds';
+    singularName: 'getting-informed';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::getting-informed.getting-informed'
+    > &
+      Schema.Attribute.Private;
+    metadata: Schema.Attribute.Component<'seo.metadata', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.Component<'getting-informed.section', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    titleMore: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1344,6 +1378,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::experience.experience': ApiExperienceExperience;
+      'api::getting-informed.getting-informed': ApiGettingInformedGettingInformed;
       'api::global.global': ApiGlobalGlobal;
       'api::impressum.impressum': ApiImpressumImpressum;
       'api::support.support': ApiSupportSupport;

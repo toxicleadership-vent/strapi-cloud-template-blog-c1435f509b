@@ -109,6 +109,19 @@ export interface ContactTextBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface GettingInformedSection extends Struct.ComponentSchema {
+  collectionName: 'components_getting_informed_section';
+  info: {
+    displayName: 'GI Section';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Component<'shared.image-ref', false>;
+    link: Schema.Attribute.Component<'shared.button', false>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface LegalContact extends Struct.ComponentSchema {
   collectionName: 'components_legal_contacts';
   info: {
@@ -417,6 +430,7 @@ declare module '@strapi/strapi' {
       'contact.form': ContactForm;
       'contact.rules': ContactRules;
       'contact.text-block': ContactTextBlock;
+      'getting-informed.section': GettingInformedSection;
       'legal.contact': LegalContact;
       'legal.photos': LegalPhotos;
       'legal.webdesign': LegalWebdesign;

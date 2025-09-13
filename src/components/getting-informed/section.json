@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_getting_informed_section",
+  "info": { "displayName": "GI Section" },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "description": { "type": "text" },
+    "link": { "type": "component", "repeatable": false, "component": "shared.button" },
+    "image": { "type": "component", "repeatable": false, "component": "shared.image-ref" }
+  }
+}

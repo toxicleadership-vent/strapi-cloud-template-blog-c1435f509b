@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "getting_informeds",
+  "info": {
+    "singularName": "getting-informed",
+    "pluralName": "getting-informeds",
+    "displayName": "Getting Informed"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "titleMore": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "sections": {
+      "type": "component",
+      "component": "getting-informed.section",
+      "repeatable": true
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    },
+    "metadata": {
+      "type": "component",
+      "component": "seo.metadata",
+      "repeatable": false
+    }
+  }
+}
