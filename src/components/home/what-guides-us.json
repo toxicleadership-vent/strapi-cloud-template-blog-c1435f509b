@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_home_what_guides_us",
+  "info": { "displayName": "What Guides Us" },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "sections": { "type": "component", "repeatable": true, "component": "home.guiding-section", "required": true },
+    "button": { "type": "component", "repeatable": false, "component": "shared.button" }
+  }
+}

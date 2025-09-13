@@ -132,6 +132,83 @@ export interface GettingInformedSection extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeGuidingSection extends Struct.ComponentSchema {
+  collectionName: 'components_home_guiding_section';
+  info: {
+    displayName: 'Guiding Section';
+  };
+  attributes: {
+    image: Schema.Attribute.Component<'shared.image-ref', false>;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface HomePollAnswer extends Struct.ComponentSchema {
+  collectionName: 'components_home_poll_answer';
+  info: {
+    displayName: 'Poll Answer';
+  };
+  attributes: {
+    correct: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    percentage: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface HomePollQuestion extends Struct.ComponentSchema {
+  collectionName: 'components_home_poll_question';
+  info: {
+    displayName: 'Poll Question';
+  };
+  attributes: {
+    answers: Schema.Attribute.Component<'home.poll-answer', true> &
+      Schema.Attribute.Required;
+    question: Schema.Attribute.String & Schema.Attribute.Required;
+    showPercentage: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
+    source: Schema.Attribute.String;
+  };
+}
+
+export interface HomePolls extends Struct.ComponentSchema {
+  collectionName: 'components_home_polls';
+  info: {
+    displayName: 'Polls';
+  };
+  attributes: {
+    next: Schema.Attribute.String;
+    questionLabel: Schema.Attribute.String;
+    questions: Schema.Attribute.Component<'home.poll-question', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeWhatGuidesUs extends Struct.ComponentSchema {
+  collectionName: 'components_home_what_guides_us';
+  info: {
+    displayName: 'What Guides Us';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    sections: Schema.Attribute.Component<'home.guiding-section', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface HomeWhatWeDo extends Struct.ComponentSchema {
+  collectionName: 'components_home_what_we_do';
+  info: {
+    displayName: 'What We Do';
+  };
+  attributes: {
+    image: Schema.Attribute.Component<'shared.image-ref', false>;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface LegalContact extends Struct.ComponentSchema {
   collectionName: 'components_legal_contacts';
   info: {
@@ -452,6 +529,12 @@ declare module '@strapi/strapi' {
       'contact.text-block': ContactTextBlock;
       'donation.donation-list-item': DonationDonationListItem;
       'getting-informed.section': GettingInformedSection;
+      'home.guiding-section': HomeGuidingSection;
+      'home.poll-answer': HomePollAnswer;
+      'home.poll-question': HomePollQuestion;
+      'home.polls': HomePolls;
+      'home.what-guides-us': HomeWhatGuidesUs;
+      'home.what-we-do': HomeWhatWeDo;
       'legal.contact': LegalContact;
       'legal.data-privacy': LegalDataPrivacy;
       'legal.photos': LegalPhotos;

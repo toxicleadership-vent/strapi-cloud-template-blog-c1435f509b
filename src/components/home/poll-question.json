@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_home_poll_question",
+  "info": { "displayName": "Poll Question" },
+  "attributes": {
+    "question": { "type": "string", "required": true },
+    "answers": { "type": "component", "repeatable": true, "component": "home.poll-answer", "required": true },
+    "showPercentage": { "type": "boolean", "default": false },
+    "source": { "type": "string" }
+  }
+}

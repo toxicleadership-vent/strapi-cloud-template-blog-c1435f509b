@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_home_what_we_do",
+  "info": { "displayName": "What We Do" },
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "image": { "type": "component", "repeatable": false, "component": "shared.image-ref" },
+    "text": { "type": "text" }
+  }
+}

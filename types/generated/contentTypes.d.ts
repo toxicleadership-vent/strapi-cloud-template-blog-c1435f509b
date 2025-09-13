@@ -881,6 +881,35 @@ export interface ApiGettingInformedGettingInformed
   };
 }
 
+export interface ApiHomeHome extends Struct.SingleTypeSchema {
+  collectionName: 'homes';
+  info: {
+    displayName: 'Home';
+    pluralName: 'homes';
+    singularName: 'home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'> &
+      Schema.Attribute.Private;
+    metadata: Schema.Attribute.Component<'seo.metadata', false>;
+    polls: Schema.Attribute.Component<'home.polls', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    whatGuidesUs: Schema.Attribute.Component<'home.what-guides-us', false>;
+    whatWeDo: Schema.Attribute.Component<'home.what-we-do', false>;
+  };
+}
+
 export interface ApiImpressumImpressum extends Struct.SingleTypeSchema {
   collectionName: 'impressums';
   info: {
@@ -1559,6 +1588,7 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::general.general': ApiGeneralGeneral;
       'api::getting-informed.getting-informed': ApiGettingInformedGettingInformed;
+      'api::home.home': ApiHomeHome;
       'api::impressum.impressum': ApiImpressumImpressum;
       'api::support.support': ApiSupportSupport;
       'plugin::content-releases.release': PluginContentReleasesRelease;

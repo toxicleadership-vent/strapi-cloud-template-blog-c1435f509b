@@ -1,0 +1,10 @@
+{
+  "collectionName": "components_home_polls",
+  "info": { "displayName": "Polls" },
+  "attributes": {
+    "title": { "type": "string" },
+    "next": { "type": "string" },
+    "questionLabel": { "type": "string" },
+    "questions": { "type": "component", "repeatable": true, "component": "home.poll-question" }
+  }
+}
