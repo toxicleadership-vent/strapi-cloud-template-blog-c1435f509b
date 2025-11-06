@@ -16,6 +16,15 @@
     }
   },
   "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
     "Article": {
       "type": "richtext",
       "pluginOptions": {
